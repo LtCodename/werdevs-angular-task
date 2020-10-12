@@ -1,17 +1,46 @@
-.background-pic-wrapper {
-    display: flex;
-}
+// .background-pic-wrapper {
+//     display: flex;
+// }
 
-.background-pic {
-    width: 100%;
-    max-height: calc(100vh - 85px);
-}
+// .background-pic {
+//     width: 100%;
+//     max-height: calc(100vh - 85px);
+// }
 
 .calendar-wrapper {
-    background: #282829;
+    background: #121e2f;
     color: #FFFFFF;
 }
 
 .home-page-content {
     flex-wrap: nowrap;
+    height: calc(100vh - 85px);
+}
+
+.picture-and-text {
+    width: -webkit-fill-available;
+    padding-right: 20px;
+    align-items: flex-end;
+    background-image: url('https://w.wallhaven.cc/full/ne/wallhaven-nekxjk.png');
+    background-size: cover;
+}
+
+.home-text-wrapper {
+    max-width: 300px;
+}
+
+.home-text-wrapper > span {
+    text-align: right;
+}
+
+.home-primary-text {
+    color: #fdd000;
+    text-transform: uppercase;
+    font-size: 30px;
+    font-weight: 800;
+    margin-bottom: 20px;
+}
+
+.home-secondary-text {
+    color: #FFFFFF;
 }
