@@ -1,32 +1,48 @@
 import { CommonModule } from '@angular/common';
-import { Component, Input, NgModule, OnInit } from '@angular/core';
+import { Component, Input, NgModule, OnDestroy, OnInit } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
+import { ModalStateService, State } from 'src/app/modal-state.service';
 
 @Component({
   selector: 'app-cal-day',
   templateUrl: './cal-day.component.html',
   styleUrls: ['./cal-day.component.scss']
 })
-export class CalDayComponent implements OnInit {
+export class CalDayComponent implements OnInit, OnDestroy {
 
   @Input() dayNumber: number;
   @Input() weekDayNumber: number;
   @Input() monthName: string;
-  public showModal: boolean = false;
-  public newMonth: string;
-  public newDay: string;
+  public showModal: boolean;
+  subscription;
 
-  constructor() { }
+  inputsData:State = {
+    day: "",
+    month: ""
+  };
+
+  constructor(private stateManager: ModalStateService) { }
 
   toggleModal(event: any): void {
     event.stopPropagation();
     this.showModal = !this.showModal;
+
+    //send new data to state manager
+    this.stateManager.setState(this.monthName, `${this.dayNumber}th ${this.getDayName(this.weekDayNumber)}`);
   }
 
   ngOnInit(): void {
-    this.newMonth = this.monthName;
-    this.newDay = `${this.dayNumber}th ${this.getDayName(this.weekDayNumber)}`;
+    //subscribe to state
+    this.subscription = this.stateManager.getState().subscribe(
+      res => {
+        this.inputsData.day = res.day;
+        this.inputsData.month = res.month;
+      },
+      err => {
+        console.error(`An error occurred: ${err.message}`);
+      }
+    );
   }
 
   getDayName(dayNumber:number): string {
@@ -59,6 +75,10 @@ export class CalDayComponent implements OnInit {
     }
 
     return dayName;
+  }
+
+  ngOnDestroy(): void {
+    this.subscription.unsubscribe();
   }
 }
 
