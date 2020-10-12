@@ -1,0 +1,18 @@
+.background-pic-wrapper {
+    display: flex;
+}
+
+.background-pic {
+    width: 100%;
+    max-height: calc(100vh - 85px);
+}
+
+.calendar-wrapper {
+    background: #282829;
+    color: #FFFFFF;
+    width: 300px;
+}
+
+.home-page-content {
+    flex-wrap: nowrap;
+}
