@@ -25,6 +25,10 @@ export class CalDayComponent implements OnInit, OnDestroy {
   constructor(private stateManager: ModalStateService) { }
 
   toggleModal(event: any): void {
+    if (!this.monthName) {
+      return;
+    }
+  
     event.stopPropagation();
     this.showModal = !this.showModal;
 
