@@ -1,6 +1,8 @@
 import { CommonModule } from '@angular/common';
 import { Component, NgModule, OnInit } from '@angular/core';
+import { DomSanitizer } from '@angular/platform-browser';
 import { RouterModule } from '@angular/router';
+import { ArrowLeft, ArrowRight } from 'src/icons';
 import { CalendarCreator } from './calendar-creator.service';
 import { Day } from './calendar-model';
 
@@ -13,24 +15,28 @@ import { Day } from './calendar-model';
 export class CalendarComponent implements OnInit {
 
   public monthDays: Day[];
-
   public monthNumber: number;
   public year: number;
-
   public weekDaysName = [];
 
-  constructor(public calendarCreator: CalendarCreator) {}
+  readonly arrowLeft = this.sanitized.bypassSecurityTrustHtml(ArrowLeft);
+  readonly arrowRight = this.sanitized.bypassSecurityTrustHtml(ArrowRight);
+
+  constructor(
+    public calendarCreator: CalendarCreator,
+    private sanitized: DomSanitizer
+    ) {}
 
   ngOnInit(): void {
     this.setMonthDays(this.calendarCreator.getCurrentMonth());
 
-    this.weekDaysName.push("Mo");
-    this.weekDaysName.push("Tu");
-    this.weekDaysName.push("We");
-    this.weekDaysName.push("Th");
-    this.weekDaysName.push("Fr");
-    this.weekDaysName.push("Sa");
-    this.weekDaysName.push("Su");
+    this.weekDaysName.push("M");
+    this.weekDaysName.push("T");
+    this.weekDaysName.push("W");
+    this.weekDaysName.push("T");
+    this.weekDaysName.push("F");
+    this.weekDaysName.push("S");
+    this.weekDaysName.push("S");
   }
 
   onNextMonth(): void {
