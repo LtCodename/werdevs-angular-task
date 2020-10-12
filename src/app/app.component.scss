@@ -1,0 +1,33 @@
+.header-wrapper {
+    justify-content: space-between;
+    padding: 15px 70px 10px 70px;
+}
+
+.logo {
+    width: 140px;
+    height: auto;
+}
+
+.tab {
+    font-size: 18px;
+    font-weight: 500;
+    text-transform: uppercase;
+    color: #000000;
+    margin: 0 20px;
+    text-decoration: none;
+    transition: 0.2s all;
+    margin-bottom: 5px;
+}
+
+.dot {
+    height: 8px;
+    width: 8px;
+    background-color: #fdd000;
+    border-radius: 50%;
+    display: inline-block;
+}
+
+.void {
+    height: 8px;
+    width: 8px;
+}

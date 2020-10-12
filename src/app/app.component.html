@@ -1,14 +1,36 @@
-<div class="tab-holder">
-  <a 
-    class="tab" 
-    routerLinkActive="active-tab" 
-    [routerLink]="['/home']">
-    home
-  </a>
-  <a 
-    class="tab" 
-    routerLinkActive="active-tab" 
-    [routerLink]="['/about']">
-    about
-  </a>
+<div class="column">
+  <!-- Header -->
+  <div class="row header-wrapper">
+    <span>
+      <img class="logo" src="assets/logo.svg">
+    </span>
+    <div class="tab-holder row row-center-vertical">
+      <div class="tab-and-dot column column-center-horizontal">
+        <a 
+          class="tab" 
+          routerLinkActive="active-tab" 
+          [routerLink]="['/home']">
+          home
+        </a>
+        <span class="dot" *ngIf="currentRoute === 'home'"></span>
+        <span class="void" *ngIf="currentRoute !== 'home'"></span>
+      </div>
+      <div class="tab-and-dot column column-center-horizontal">
+        <a 
+          class="tab" 
+          routerLinkActive="active-tab" 
+          [routerLink]="['/about']">
+          about
+        </a>
+        <span class="dot" *ngIf="currentRoute === 'about'"></span>
+        <span class="void" *ngIf="currentRoute !== 'about'"></span>
+      </div>
+    </div>
+  </div>
+  
+  <!-- Header Ends -->
+  <div class="page-content-wrapper">
+    <router-outlet></router-outlet>
+  </div>
 </div>
+
