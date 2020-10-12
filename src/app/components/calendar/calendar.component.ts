@@ -17,6 +17,7 @@ export class CalendarComponent implements OnInit {
   public monthDays: Day[];
   public monthNumber: number;
   public year: number;
+  public showModal: boolean = false;
   public weekDaysName = [];
 
   readonly arrowLeft = this.sanitized.bypassSecurityTrustHtml(ArrowLeft);
@@ -37,6 +38,10 @@ export class CalendarComponent implements OnInit {
     this.weekDaysName.push("F");
     this.weekDaysName.push("S");
     this.weekDaysName.push("S");
+  }
+
+  toggleModal(): void {
+    this.showModal = !this.showModal;
   }
 
   onNextMonth(): void {
