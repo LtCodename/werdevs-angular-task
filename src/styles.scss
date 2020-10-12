@@ -11,8 +11,12 @@ body {
     sans-serif;
 }
 
-//Flex Building Blocks
+.calendar-button {
+    fill: #FFFFFF;
+    height: 20px
+}
 
+//Flex Building Blocks
 .row {
     display: flex;
     flex-direction: row;
@@ -47,9 +51,4 @@ body {
 
 .column-center-vertical {
     justify-content: center;
-}
-
-.calendar-button {
-    fill: #FFFFFF;
-    height: 20px
 }
