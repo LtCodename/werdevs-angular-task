@@ -1,15 +1,32 @@
 .day-number {
-    min-width: 40px;
-    display: inline-block;
-    padding: 10px;
-    cursor: pointer;
-    text-align: center;
-    transition: .2s all;
+  min-width: 40px;
+  display: inline-block;
+  padding: 10px;
+  cursor: pointer;
+  text-align: center;
+  transition: .2s all;
 }
 
 .day-number:hover {
-    background: #fdd000;
-    color: #121e2f;
+  background: #fdd000;
+  color: #121e2f;
+}
+
+.input-row {
+  label {
+    color: #a2a2a2;
+    font-size: 12px;
+    font-weight: 600;
+    margin-bottom: 5px;
+  }
+
+  input {
+    border-radius: 0;
+    border: 1px solid #fdd001;
+    padding: 5px;
+    margin: 0 5px;
+    font-weight: 600;
+  }
 }
 
 //Modal Window CSS
@@ -29,19 +46,21 @@
     background-color: #fefefe;
     margin: 15% auto;
     padding: 20px;
-    border: 1px solid #888;
+    position: relative;
   }
-  
-  .close {
-    color: #aaa;
-    float: right;
-    font-size: 28px;
-    font-weight: bold;
-  }
-  
-  .close:hover,
-  .close:focus {
-    color: black;
-    text-decoration: none;
+
+  .modal-close-button {
+    position: absolute;
+    top: 0;
+    right: 0;
+    border-radius: 0;
+    border: none;
+    background: #fdd100;
     cursor: pointer;
+    padding: 3px 8px;
+    outline: none;
+  }
+
+  .modal-close-button:focus, .modal-close-button:active {
+    outline: none;
   }

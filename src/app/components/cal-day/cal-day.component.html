@@ -1,12 +1,19 @@
 <div (click)="toggleModal($event)" class="day-number">
     {{dayNumber}}
+</div>
 
-    <!-- Modal -->
-    <div *ngIf="showModal" class="cal-modal column column-center-vertical">
-        <!-- Modal content -->
-        <div class="modal-content">
-        <span (click)="toggleModal($event)" class="close">&times;</span>
-        <p>Some text in the Modal..</p>
+<!-- Modal -->
+<div *ngIf="showModal" class="cal-modal column column-center-vertical">
+    <!-- Modal content -->
+    <div class="modal-content row">
+        <div class="input-row column">
+            <label class="">Month</label>
+            <input class="" type="text" [(ngModel)]="newMonth">
         </div>
+        <div class="input-row column">
+            <label class="">Day</label>
+            <input class="" type="text" [(ngModel)]="newDay">
+        </div>
+        <button (click)="toggleModal($event)" class="modal-close-button">X</button>
     </div>
 </div>
