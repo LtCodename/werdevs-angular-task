@@ -47,6 +47,8 @@ export class CalDayComponent implements OnInit, OnDestroy {
         console.error(`An error occurred: ${err.message}`);
       }
     );
+
+    console.log(this.dayNumber)
   }
 
   getDayName(dayNumber:number): string {

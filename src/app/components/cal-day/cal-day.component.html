@@ -1,4 +1,4 @@
-<div (click)="toggleModal($event)" class="day-number">
+<div (click)="toggleModal($event)" [ngClass]="{'day-number': dayNumber, 'day-empty': !dayNumber}">
     {{dayNumber}}
 </div>
 

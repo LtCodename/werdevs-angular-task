@@ -7,6 +7,13 @@
   transition: .2s all;
 }
 
+.day-empty {
+  min-width: 40px;
+  display: inline-block;
+  padding: 10px;
+  text-align: center;
+}
+
 .day-number:hover {
   background: #fdd000;
   color: #121e2f;
