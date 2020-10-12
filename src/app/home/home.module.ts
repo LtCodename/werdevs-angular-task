@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { HomeRoutingModule } from './home-routing.module';
 import { HomePageComponent } from './home-page/home-page.component';
+import { CalendarModule } from '../components/calendar/calendar.component';
 
 
 
@@ -9,7 +10,8 @@ import { HomePageComponent } from './home-page/home-page.component';
   declarations: [HomePageComponent],
   imports: [
     CommonModule,
-    HomeRoutingModule
+    HomeRoutingModule,
+    CalendarModule
   ]
 })
 export class HomeModule { }

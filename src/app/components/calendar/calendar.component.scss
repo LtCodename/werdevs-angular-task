@@ -1,0 +1,25 @@
+.calendar {
+    width: 210px;
+  
+    .day {
+      width: 30px;
+      display: inline-block;
+    }
+}  
+
+.calendar-nav {
+  flex-wrap: nowrap;
+  margin-bottom: 10px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid white;
+  justify-content: space-between;
+  text-transform: uppercase;
+}
+
+.calendar-wrapper {
+  padding: 50px;
+}
+
+.cal-year {
+  margin-left: 5px;
+}

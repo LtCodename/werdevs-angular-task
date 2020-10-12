@@ -1,0 +1,21 @@
+<div class="column calendar-wrapper">
+    <div class="row calendar-nav">
+        <button (click)="onPreviousMonth()">Previous</button>
+        <div class="row">
+            <span>{{calendarCreator.getMonthName(monthNumber)}}</span>
+            <span class="cal-year">{{year}}</span>
+        </div>
+        
+        <button (click)="onNextMonth()">Next</button>
+    </div>
+      
+    <div class="calendar">
+    <span *ngFor='let weekDay of weekDaysName' class="day">
+        {{weekDay}}
+    </span>
+    
+    <span *ngFor='let day of monthDays' class="day">
+        {{day.number}}
+    </span>
+    </div>
+</div>
