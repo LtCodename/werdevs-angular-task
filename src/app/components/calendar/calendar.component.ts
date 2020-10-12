@@ -32,9 +32,9 @@ export class CalendarComponent implements OnInit {
     this.setMonthDays(this.calendarCreator.getCurrentMonth());
 
     this.weekDaysName.push("M");
-    this.weekDaysName.push("T");
+    this.weekDaysName.push("Tu");
     this.weekDaysName.push("W");
-    this.weekDaysName.push("T");
+    this.weekDaysName.push("Th");
     this.weekDaysName.push("F");
     this.weekDaysName.push("Sa");
     this.weekDaysName.push("Su");
