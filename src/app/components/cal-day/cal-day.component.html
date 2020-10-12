@@ -1,0 +1,12 @@
+<div (click)="toggleModal($event)" class="day-number">
+    {{dayNumber}}
+
+    <!-- Modal -->
+    <div *ngIf="showModal" class="cal-modal column column-center-vertical">
+        <!-- Modal content -->
+        <div class="modal-content">
+        <span (click)="toggleModal($event)" class="close">&times;</span>
+        <p>Some text in the Modal..</p>
+        </div>
+    </div>
+</div>

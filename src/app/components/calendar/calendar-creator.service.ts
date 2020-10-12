@@ -19,7 +19,6 @@ export class CalendarCreator {
 
     let firstday = this.createDay(1, monthIndex, year);
 
-    //create empty days
     for (let i = 1; i < firstday.weekDayNumber; i++) {
       days.push({
         weekDayNumber: i,
@@ -27,10 +26,10 @@ export class CalendarCreator {
         year: year,
       } as Day);
     }
-    days.push(firstday);
-    //
 
-    let countDaysInMonth = new Date(year, monthIndex +1, 0).getDate();
+    days.push(firstday);
+
+    let countDaysInMonth = new Date(year, monthIndex + 1, 0).getDate();
     for (let i = 2; i < countDaysInMonth +1; i++) {
       days.push(this.createDay(i, monthIndex, year));
     }
@@ -86,7 +85,6 @@ export class CalendarCreator {
         return "Fr"; // Friday
       case 6:
         return "Sa"; // Saturday
-
       default:
         return "";
     }
@@ -103,7 +101,6 @@ export class CalendarCreator {
 
     day.weekDayNumber = new Date(year, monthIndex, dayNumber).getDay();
     day.weekDayName = this.getWeekDayName(day.weekDayNumber);
-
     return day;
   }
 }

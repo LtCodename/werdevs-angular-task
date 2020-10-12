@@ -3,6 +3,7 @@ import { Component, NgModule, OnInit } from '@angular/core';
 import { DomSanitizer } from '@angular/platform-browser';
 import { RouterModule } from '@angular/router';
 import { ArrowLeft, ArrowRight } from 'src/icons';
+import { CalDayModule } from '../cal-day/cal-day.component';
 import { CalendarCreator } from './calendar-creator.service';
 import { Day } from './calendar-model';
 
@@ -17,7 +18,6 @@ export class CalendarComponent implements OnInit {
   public monthDays: Day[];
   public monthNumber: number;
   public year: number;
-  public showModal: boolean = false;
   public weekDaysName = [];
 
   readonly arrowLeft = this.sanitized.bypassSecurityTrustHtml(ArrowLeft);
@@ -38,10 +38,6 @@ export class CalendarComponent implements OnInit {
     this.weekDaysName.push("F");
     this.weekDaysName.push("S");
     this.weekDaysName.push("S");
-  }
-
-  toggleModal(): void {
-    this.showModal = !this.showModal;
   }
 
   onNextMonth(): void {
@@ -78,7 +74,8 @@ export class CalendarComponent implements OnInit {
   declarations: [CalendarComponent],
   imports: [
     CommonModule,
-    RouterModule
+    RouterModule,
+    CalDayModule
   ],
   exports: [CalendarComponent]
 })

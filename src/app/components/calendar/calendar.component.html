@@ -10,21 +10,16 @@
       
     <div class="calendar">
         <div>
-            <span (click)="toggleModal()" *ngFor='let day of monthDays' class="day-number">{{day.number}}</span>
+            <app-cal-day *ngFor='let day of monthDays' 
+            [dayNumber]="day.number"
+            [monthName]="day.month"
+            [weekDayNumber]="day.weekDayNumber"
+            ></app-cal-day>
         </div>
         <div class="row week-days-row">
             <div *ngFor='let weekDay of weekDaysName' class="day-name row row-center-horizontal">
                 <span>{{weekDay}}</span>
             </div>
         </div>
-        <!-- Modal -->
-
-        <div *ngIf="showModal" class="cal-modal column column-center-vertical">
-            <!-- Modal content -->
-            <div class="modal-content">
-              <span (click)="toggleModal()" class="close">&times;</span>
-              <p>Some text in the Modal..</p>
-            </div>
-          </div>
     </div>
 </div>
