@@ -1,12 +1,3 @@
-// .background-pic-wrapper {
-//     display: flex;
-// }
-
-// .background-pic {
-//     width: 100%;
-//     max-height: calc(100vh - 85px);
-// }
-
 .calendar-wrapper {
     background: #121e2f;
     color: #FFFFFF;
@@ -15,6 +6,9 @@
 .home-page-content {
     flex-wrap: nowrap;
     height: calc(100vh - 85px);
+    display: flex;
+    flex-direction: row;
+    background: #131f2f;
 }
 
 .picture-and-text {
@@ -43,4 +37,19 @@
 
 .home-secondary-text {
     color: #FFFFFF;
+}
+
+@media only screen and (max-width: 700px) {
+    .home-page-content {
+        flex-direction: column;
+    }
+
+    .picture-and-text {
+        align-items: center;
+        padding: 20px 0;
+    }
+
+    .home-secondary-text {
+        text-align: center !important;
+    }
 }
